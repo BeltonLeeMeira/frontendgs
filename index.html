@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AlertaFácil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .burger-line {
+            transition: all 0.3s ease;
+        }
+        .burger-active .burger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .burger-active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .burger-active .burger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+     
+        main.container {
+            max-width: 960px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        header nav a {
+            padding: 0.5rem 1rem;
+        }
+
+        footer {
+            border-top: 1px solid #e5e7eb; 
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        form input,
+        form textarea {
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            main.container {
+                max-width: 1024px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <header class="bg-white shadow-md fixed w-full z-30">
+        <nav class="container mx-auto flex items-center justify-between p-4">
+            <a href="#" class="text-xl font-bold text-blue-600">AlertaFácil</a>
+            <button id="burger" aria-label="Menu" aria-expanded="false" class="md:hidden flex flex-col space-y-1.5 focus:outline-none">
+                <span class="burger-line block w-6 h-0.5 bg-blue-600"></span>
+                <span class="burger-line block w-6 h-0.5 bg-blue-600"></span>
+                <span class="burger-line block w-6 h-0.5 bg-blue-600"></span>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex space-x-6 text-lg">
+                <li><a href="#sobre" class="hover:text-blue-500 transition">Sobre</a></li>
+                <li><a href="#problema" class="hover:text-blue-500 transition">Problema</a></li>
+                <li><a href="#solucao" class="hover:text-blue-500 transition">Solução</a></li>
+                <li><a href="#diferenciais" class="hover:text-blue-500 transition">Diferenciais</a></li>
+                <li><a href="#contato" class="hover:text-blue-500 transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20 container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <section id="sobre" class="md:col-span-12">
+            <h1 class="text-4xl font-extrabold mb-4">AlertaFácil - Solução para Enchentes no Brasil</h1>
+            <p class="mb-6">
+                O AlertaFácil é um sistema inteligente de alerta para enchentes, desenvolvido para prevenir tragédias anunciadas no Brasil. Este projeto visa proteger a população em áreas de risco, agentes da Defesa Civil e prefeituras municipais, utilizando tecnologia acessível e escalável.
+            </p>
+        </section>
+
+        <section id="problema" class="md:col-span-6">
+            <h2 class="text-3xl font-bold mb-3">O Problema</h2>
+            <p>
+                O Brasil sofre anualmente com enchentes devastadoras causadas por chuvas intensas, falta de drenagem e ausência de monitoramento adequado. Muitas vezes, a população só é alertada quando o problema já se agravou, resultando em perdas de casas, bens e vidas.
+            </p>
+        </section>
+
+        <section id="solucao" class="md:col-span-6">
+            <h2 class="text-3xl font-bold mb-3">Como a Solução Funciona</h2>
+            <p>
+                O sistema AlertaFácil é composto por sensores de nível de água em pontos críticos, um app de alerta para celulares com mensagens automáticas baseadas em localização, um dashboard para a Defesa Civil acompanhar os dados em tempo real, e um sistema em Python que simula histórico, gera alertas e analisa riscos.
+            </p>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <img src="assets/sensor.png" alt="Sensor de nível de água" class="rounded shadow-md w-full max-w-xs mx-auto" />
+                <img src="assets/alertas.png" alt="App de alerta para celulares" class="rounded shadow-md w-full max-w-xs mx-auto" />
+            </div>
+        </section>
+
+        <section id="diferenciais" class="md:col-span-12">
+            <h2 class="text-3xl font-bold mb-3">Diferenciais</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Envio de alertas automáticos baseados em localização</li>
+                <li>Dashboard visual para monitoramento em tempo real</li>
+                <li>Funcionamento parcial offline para maior confiabilidade</li>
+                <li>Sistema modular com partes independentes</li>
+                <li>Design atrativo, acessível e intuitivo</li>
+                <li>Responsividade total com abordagem Mobile First</li>
+                <li>Uso de CSS Grid Layout para organização</li>
+                <li>Micro interações e animações para dinamismo visual</li>
+                <li>Interação com JavaScript para melhor experiência do usuário</li>
+            </ul>
+        </section>
+
+        <section id="backlog" class="md:col-span-12">
+            <h2 class="text-3xl font-bold mb-3">Backlog e Casos de Uso</h2>
+            <p>
+                O projeto possui um backlog de funcionalidades que inclui monitoramento via sensor, envio de dados via MQTT, análise de risco em Python, notificações via app, mapa com rotas de fuga e dashboard com dados ao vivo.
+            </p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>UC01 - Monitoramento de Enchente: Sensor coleta dados, envia para dashboard, gera alertas</li>
+                <li>UC02 - Alerta ao Usuário: App recebe alertas push com rotas de evacuação</li>
+            </ul>
+        </section>
+
+        <section id="ux" class="md:col-span-12">
+            <h2 class="text-3xl font-bold mb-3">Protótipos e UX Design</h2>
+            <p>
+                O design do app prioriza acessibilidade, clareza e urgência, com textos grandes, alto contraste e interface simples para facilitar o uso em situações de emergência.
+            </p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Acessibilidade: textos grandes, contraste alto, poucos cliques</li>
+                <li>Clareza: interface com ícones e frases curtas</li>
+                <li>Urgência: destaque em vermelho para nível de risco</li>
+            </ul>
+            <p>
+                O design é simples e direto, pensado para funcionar bem em regiões com pouca conectividade e para pessoas com baixa alfabetização tecnológica.
+            </p>
+        </section>
+
+        <section id="contato" class="md:col-span-12">
+            <h2 class="text-3xl font-bold mb-3">Contato</h2>
+            <p>
+                Entre em contato conosco para mais informações ou dúvidas.
+            </p>
+            <form class="mt-4 max-w-md" id="contact-form" aria-label="Formulário de contato">
+                <label for="name" class="block font-semibold mb-1">Nome:</label>
+                <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                
+                <label for="email" class="block font-semibold mt-4 mb-1">Email:</label>
+                <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                
+                <label for="message" class="block font-semibold mt-4 mb-1">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                
+                <button type="submit" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-white shadow-inner mt-12 py-6 text-center text-gray-600">
+        &copy; 2025 AlertaFácil - Todos os direitos reservados.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
